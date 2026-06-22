@@ -53,7 +53,11 @@ export function ReviewPanel() {
   if (!resume) return null;
 
   return (
-    <section aria-labelledby="review-title" className="mt-10 space-y-6">
+    <section
+      id="reviews"
+      aria-labelledby="review-title"
+      className="mt-10 space-y-6"
+    >
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="text-primary text-sm font-semibold">Step 4</p>

@@ -19,11 +19,11 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { label: "Workspace", icon: FileScan },
-  { label: "ATS analysis", icon: ChartNoAxesCombined },
-  { label: "Job match", icon: BriefcaseBusiness },
-  { label: "Career roadmap", icon: BrainCircuit },
-  { label: "Review panel", icon: UsersRound },
+  { label: "Workspace", icon: FileScan, href: "#workspace" },
+  { label: "ATS analysis", icon: ChartNoAxesCombined, href: "#analysis" },
+  { label: "Job match", icon: BriefcaseBusiness, href: "#career" },
+  { label: "Career roadmap", icon: BrainCircuit, href: "#career" },
+  { label: "Review panel", icon: UsersRound, href: "#reviews" },
 ];
 
 function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
@@ -39,10 +39,10 @@ function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
         </div>
       </div>
       <nav aria-label="Primary navigation" className="flex-1 space-y-1 px-3">
-        {navigation.map(({ label, icon: Icon }, index) => (
+        {navigation.map(({ label, icon: Icon, href }, index) => (
           <a
             key={label}
-            href="#workspace"
+            href={href}
             onClick={onNavigate}
             className={cn(
               "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",

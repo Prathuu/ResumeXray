@@ -10,6 +10,7 @@ import {
 import { AppShell } from "@/components/app-shell";
 import { AnalysisDashboard } from "@/components/analysis-dashboard";
 import { CareerIntelligence } from "@/components/career-intelligence";
+import { ExportPanel } from "@/components/export-panel";
 import { ResumeUploader } from "@/components/resume-uploader";
 import { ReviewPanel } from "@/components/review-panel";
 import { Badge } from "@/components/ui/badge";
@@ -96,6 +97,7 @@ export default function Home() {
       <AnalysisDashboard />
       <CareerIntelligence />
       <ReviewPanel />
+      <ExportPanel />
     </AppShell>
   );
 }

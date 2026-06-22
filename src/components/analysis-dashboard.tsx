@@ -44,7 +44,11 @@ export function AnalysisDashboard() {
   if (!analysis) return null;
 
   return (
-    <section aria-labelledby="analysis-title" className="mt-10 space-y-6">
+    <section
+      id="analysis"
+      aria-labelledby="analysis-title"
+      className="mt-10 space-y-6"
+    >
       <div>
         <p className="text-primary text-sm font-semibold">Step 2</p>
         <h2

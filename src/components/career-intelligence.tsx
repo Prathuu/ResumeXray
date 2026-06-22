@@ -71,7 +71,11 @@ export function CareerIntelligence() {
   };
 
   return (
-    <section aria-labelledby="career-title" className="mt-10 space-y-6">
+    <section
+      id="career"
+      aria-labelledby="career-title"
+      className="mt-10 space-y-6"
+    >
       <div>
         <p className="text-primary text-sm font-semibold">Step 3</p>
         <h2 id="career-title" className="text-2xl font-semibold tracking-tight">
