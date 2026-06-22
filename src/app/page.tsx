@@ -11,6 +11,7 @@ import { AppShell } from "@/components/app-shell";
 import { AnalysisDashboard } from "@/components/analysis-dashboard";
 import { CareerIntelligence } from "@/components/career-intelligence";
 import { ResumeUploader } from "@/components/resume-uploader";
+import { ReviewPanel } from "@/components/review-panel";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -94,6 +95,7 @@ export default function Home() {
       <ResumeUploader />
       <AnalysisDashboard />
       <CareerIntelligence />
+      <ReviewPanel />
     </AppShell>
   );
 }
