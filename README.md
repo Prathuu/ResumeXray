@@ -46,7 +46,7 @@ committed or persisted by default.
 - [x] Milestone 2 — design system and application shell
 - [x] Milestone 3 — resume upload and parsing
 - [x] Milestone 4 — ATS analysis engine
-- [ ] Milestone 5 — career intelligence
+- [x] Milestone 5 — career intelligence
 - [ ] Milestone 6 — multi-agent feedback
 - [ ] Milestone 7 — export and UX polish
 - [ ] Milestone 8 — production readiness

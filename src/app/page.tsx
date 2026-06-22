@@ -9,6 +9,7 @@ import {
 
 import { AppShell } from "@/components/app-shell";
 import { AnalysisDashboard } from "@/components/analysis-dashboard";
+import { CareerIntelligence } from "@/components/career-intelligence";
 import { ResumeUploader } from "@/components/resume-uploader";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -92,6 +93,7 @@ export default function Home() {
       </section>
       <ResumeUploader />
       <AnalysisDashboard />
+      <CareerIntelligence />
     </AppShell>
   );
 }
