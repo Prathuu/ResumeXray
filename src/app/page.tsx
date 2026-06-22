@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { AppShell } from "@/components/app-shell";
+import { AnalysisDashboard } from "@/components/analysis-dashboard";
 import { ResumeUploader } from "@/components/resume-uploader";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -90,6 +91,7 @@ export default function Home() {
         ))}
       </section>
       <ResumeUploader />
+      <AnalysisDashboard />
     </AppShell>
   );
 }
