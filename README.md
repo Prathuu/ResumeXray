@@ -43,7 +43,7 @@ committed or persisted by default.
 ## Delivery progress
 
 - [x] Milestone 1 — project foundation and tooling
-- [ ] Milestone 2 — design system and application shell
+- [x] Milestone 2 — design system and application shell
 - [ ] Milestone 3 — resume upload and parsing
 - [ ] Milestone 4 — ATS analysis engine
 - [ ] Milestone 5 — career intelligence

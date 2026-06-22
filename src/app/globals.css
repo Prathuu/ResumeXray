@@ -1,19 +1,60 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
-  --background: #f7f9fc;
-  --foreground: #152033;
+  --background: #f5f7fb;
+  --foreground: #172033;
+  --card: rgba(255, 255, 255, 0.78);
+  --card-solid: #ffffff;
+  --muted: #eef2f7;
+  --muted-foreground: #667085;
+  --border: rgba(15, 23, 42, 0.1);
+  --primary: #087f8c;
+  --primary-foreground: #ffffff;
+  --accent: #dff7f5;
+  --accent-foreground: #075e68;
+  --danger: #d92d20;
+  --ring: #16a6b6;
+}
+
+.dark {
+  --background: #08111f;
+  --foreground: #e7edf7;
+  --card: rgba(16, 28, 45, 0.72);
+  --card-solid: #101c2d;
+  --muted: #17263a;
+  --muted-foreground: #9aa9bd;
+  --border: rgba(255, 255, 255, 0.1);
+  --primary: #2dd4bf;
+  --primary-foreground: #052b2e;
+  --accent: #103c41;
+  --accent-foreground: #8ce9dc;
+  --danger: #ff7b72;
+  --ring: #2dd4bf;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-solid: var(--card-solid);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-danger: var(--danger);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.08);
 }
 
 * {
   box-sizing: border-box;
+  border-color: var(--border);
 }
 
 html {
@@ -22,16 +63,40 @@ html {
 
 body {
   min-height: 100vh;
-  background: var(--background);
+  overflow-x: hidden;
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(45, 212, 191, 0.11),
+      transparent 30rem
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(56, 189, 248, 0.09),
+      transparent 32rem
+    ),
+    var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), sans-serif;
   text-rendering: optimizeLegibility;
 }
 
-button,
-a,
-input,
-textarea {
-  outline-color: #0891b2;
+::selection {
+  background: color-mix(in srgb, var(--primary) 28%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
   outline-offset: 3px;
+}
+
+.glass-panel {
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.text-balance {
+  text-wrap: balance;
 }
