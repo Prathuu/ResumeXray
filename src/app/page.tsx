@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { AppShell } from "@/components/app-shell";
+import { ResumeUploader } from "@/components/resume-uploader";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -53,13 +54,16 @@ export default function Home() {
             and the specific changes most likely to improve your next
             application.
           </p>
-          <div className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-white/8 p-2 pr-5 text-sm">
+          <a
+            href="#upload-title"
+            className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-white/8 p-2 pr-5 text-sm transition-colors hover:bg-white/12"
+          >
             <span className="grid size-10 place-items-center rounded-xl bg-cyan-300 text-slate-950">
               <FileUp className="size-5" />
             </span>
-            Upload workflow arrives in the next milestone
+            Start with your resume
             <ArrowRight className="size-4 text-cyan-300" />
-          </div>
+          </a>
         </div>
       </section>
 
@@ -85,6 +89,7 @@ export default function Home() {
           </Card>
         ))}
       </section>
+      <ResumeUploader />
     </AppShell>
   );
 }

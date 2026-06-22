@@ -9,3 +9,7 @@ export interface ParsedResume {
   parsedAt: string;
   diagnostics: string[];
 }
+
+export interface ResumeDocument extends ParsedResume {
+  previewUrl?: string;
+}

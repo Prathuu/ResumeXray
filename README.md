@@ -44,7 +44,7 @@ committed or persisted by default.
 
 - [x] Milestone 1 — project foundation and tooling
 - [x] Milestone 2 — design system and application shell
-- [ ] Milestone 3 — resume upload and parsing
+- [x] Milestone 3 — resume upload and parsing
 - [ ] Milestone 4 — ATS analysis engine
 - [ ] Milestone 5 — career intelligence
 - [ ] Milestone 6 — multi-agent feedback
