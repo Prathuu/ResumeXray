@@ -4,6 +4,7 @@ import type {
   ResumeSection,
   ScoreDetail,
 } from "@/types/analysis";
+import { extractResumeSegments } from "../utils";
 
 const SECTION_HEADINGS = [
   "summary",
@@ -88,7 +89,7 @@ function scoreDetail(
 }
 
 function splitSections(text: string): ResumeSection[] {
-  const lines = text.split("\n").map((line) => line.trim());
+  const lines = extractResumeSegments(text).map((line) => line.trim());
   const boundaries: { index: number; name: string }[] = [];
 
   lines.forEach((line, index) => {
@@ -143,8 +144,7 @@ function splitSections(text: string): ResumeSection[] {
 }
 
 function reviewAchievements(text: string): AchievementReview[] {
-  const lines = text
-    .split("\n")
+  const lines = extractResumeSegments(text)
     .map((line) => line.replace(/^[\s•●▪◦*-]+/, "").trim())
     .filter((line) => line.length >= 30 && line.length <= 300)
     .slice(0, 12);
@@ -193,6 +193,8 @@ export function analyzeResume(resumeText: string): AtsAnalysis {
   const lower = resumeText.toLowerCase();
   const sections = splitSections(resumeText);
   const achievements = reviewAchievements(resumeText);
+  console.log("========== ACHIEVEMENTS ==========");
+  console.log(achievements);
   const foundSkills = COMMON_SKILLS.filter((skill) => lower.includes(skill));
   const contactSignals = [
     /[\w.+-]+@[\w.-]+\.[a-z]{2,}/i.test(resumeText),
