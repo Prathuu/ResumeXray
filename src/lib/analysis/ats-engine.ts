@@ -4,7 +4,7 @@ import type {
   ResumeSection,
   ScoreDetail,
 } from "@/types/analysis";
-import { extractResumeSegments } from "../utils";
+import { extractAchievementBullets, extractSectionSegments } from "../utils";
 
 const SECTION_HEADINGS = [
   "summary",
@@ -89,7 +89,7 @@ function scoreDetail(
 }
 
 function splitSections(text: string): ResumeSection[] {
-  const lines = extractResumeSegments(text).map((line) => line.trim());
+  const lines = extractSectionSegments(text).map((line) => line.trim());
   const boundaries: { index: number; name: string }[] = [];
 
   lines.forEach((line, index) => {
@@ -144,10 +144,7 @@ function splitSections(text: string): ResumeSection[] {
 }
 
 function reviewAchievements(text: string): AchievementReview[] {
-  const lines = extractResumeSegments(text)
-    .map((line) => line.replace(/^[\s•●▪◦*-]+/, "").trim())
-    .filter((line) => line.length >= 30 && line.length <= 300)
-    .slice(0, 12);
+  const lines = extractAchievementBullets(text);
 
   return lines.map((bullet) => {
     const firstWord = bullet.toLowerCase().split(/\W+/)[0] ?? "";
